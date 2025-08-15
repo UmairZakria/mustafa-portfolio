@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+
+@theme {
+
+  --font-Mona : "Mona Sans", sans-serif;
+  --font-Poppins :"Poppins", sans-serif;
+  --color-primary: #FFE6B3;
+  --color-secondary: #FFE6B3;
+  --color-background: #FFFFED;
+  
+}
+
+.border {
+  border: 2px solid red;
+}
+
+html body {
+  background-color: #FFFFED;
+}
