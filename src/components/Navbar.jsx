@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Word from "./Word";
-import { ChevronLeft, ChevronRight, MoveRight ,MenuIcon, X } from 'lucide-react'
+import { motion,  } from "framer-motion";
+
+
+
+import {
+  ChevronLeft,
+  ChevronRight,
+  MoveRight,
+  MenuIcon,
+  X,
+} from "lucide-react";
 
 const Navbar = () => {
-  const sections = ["Home","Works","About", "Service", "Testomonial"];
+  
+  const sections = ["Home", "Works", "About", "Service"];
   const [selectedOption, setSelectedOption] = useState("intro");
+  const contact = document.getElementById('contact');
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,10 +30,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full z-[100] container mx-auto flex items-center justify-between absolute top-0 left-1/2 -translate-x-1/2 py-[20px] ">
+    <div className="w-full md:px-0 px-4  z-[1000]  container mx-auto flex items-center justify-between absolute top-0 left-1/2 -translate-x-1/2 py-[20px] ">
       <a href="">
-        <span className="font-semibold text-3xl font-serif italic">
-          Mustafa.
+        <span className="font-semibold text-3xl font-Poppins">
+        Marcus.
         </span>
       </a>
       <div>
@@ -35,15 +47,48 @@ const Navbar = () => {
               }`}
             >
               <span className="text-xs">
-                <Word>
-                {section}
-                </Word>
+                {/* <Word> */}
+                  {section}
+                  {/* </Word> */}
               </span>
             </li>
           ))}
         </ul>
       </div>
-      <button className="px-6  hidden md:flex group shadow-sm  transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer  bg-black text-background  items-center justify-around gap-3 rounded-full  py-3 ">
+      <div className=" md:hidden">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="p-2 rounded-full text-white bg-black "
+        >
+          {isMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+        </button>
+
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            style={{zIndex:10000}}
+            className="absolute top-full right-0 mt-2 w-48 !z-[10000] bg-black  rounded-lg backdrop-blur-lg py-2"
+          >
+            {sections.map((section) => (
+              <div
+                key={section}
+                onClick={() => handleNavClick(section)}
+                className={`px-4 py-3 text-sm cursor-pointer text-white hover:bg-white hover:text-black transition-all ${
+                  selectedOption === section ? "bg-white !text-black" : ""
+                }`}
+              >
+                {/* <Word> */}
+                  
+                  {section}
+                  
+                  {/* </Word> */}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </div>
+      <button onClick={()=>{contact.scrollIntoView({ behavior: "smooth" })}} className="px-6  hidden md:flex group shadow-sm  transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer  bg-black text-background  items-center justify-around gap-3 rounded-full  py-3 ">
         Contact
         {/* <MoveRight className="group-hover:translate-x-2 transition-all duration-300 ease-in-out" /> */}
       </button>

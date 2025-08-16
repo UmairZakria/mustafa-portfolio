@@ -1,5 +1,5 @@
 import React from "react";
-
+import ImageDistortionEffect from './ImageDistortionEffect'
 const Projects = () => {
   const data = [
     {
@@ -100,15 +100,19 @@ const Projects = () => {
     // },
   ];
   return (
-    <div className="container mx-auto min-h-screen  mt-[120px]">
+    <div id="Works" className="container mx-auto min-h-screen  mt-[120px]">
       <h1 className="text-3xl md:text-5xl tracking-tighter font-Mona text-center uppercase font-bold">
         Recent Projects
       </h1>
-      <div className=" md:px-0 px-4 flex items-center justify-center gap-8 gap-y-10  mt-[40px] flex-wrap ">
+      <div className=" md:px-0 px-4 flex items-center justify-center gap-10  lg:gap-y-10  mt-[40px] flex-wrap ">
         {
             data.map((data,index)=>(
-                <div key={index} className="  w-full md:w-[550px] md:h-[550px] overflow-hidden     ">
-                    <img src={data.imgs[0]} alt="" className="w-full h-[320px] md:h-[380px] rounded-2xl object-cover " />
+                <div key={index} className="  w-full  md:w-[360px] lg:w-[38vw] xl:w-[28vw] md:h-[550px] overflow-hidden     ">
+                  <div  className="w-full h-[300px]  lg:h-[380px] xl:h-[350px] rounded-2xl object-cover ">
+
+                    <ImageDistortionEffect imageUrl={data.imgs[0]}/>
+                  </div>
+                    {/* <img src={]} alt="" /> */}
                     <div className=" py-3  ">
                         <h1 className="text-xl font-Mona font-bold mb-[5px] tracking-tight">{data.name}</h1>
                         <p className="text-xs md:text-sm font-Mano font-medium text-black/70">{data.discription}</p>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Vision = () => {
   return (
-    <div className=" mt-[120px] ">
+    <div id="About" className=" mt-[120px] ">
       <h1 className="text-3xl md:text-5xl tracking-tighter font-Mona text-center uppercase font-bold">
         Turning My Vision
       </h1>
@@ -35,34 +35,34 @@ const Vision = () => {
           }}
         ></div>
 
-        <div className="absolute  top-1/2 -translate-y-1/2 left-0 w-full  min-h-[300px]">
-          <div className="container  mx-auto  flex items-center justify-between">
+        <div className="absolute  top-1/2 -translate-y-1/2 left-0 w-full  min-h-[300px] ">
+          <div className="container  mx-auto  flex md:flex-nowrap flex-wrap-reverse md:px-0 px-2 items-center justify-between">
             <div className="w-[400px] space-y-10">
-              <h3 className=" font-Mona font-semibold  text-2xl">
+              <h3 className=" font-Mona font-medium md:font-semibold   text-2xl">
                 Crafting digital solutions that inspire, engage, and deliver
                 measurable impact.
               </h3>
-              <div className="flex flex-wrap gap-5 justify-between items-center gap-y-14">
+              <div className="flex flex-wrap gap-5 justify-between items-center md:gap-y-14">
                 <div className="space-y-2">
-                  <div className="text-5xl  font-semibold  font-Mona">5+</div>
+                  <div className="text-4xl md:text-5xl  font-semibold  font-Mona">5+</div>
                   <p>Years of Experience</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-5xl  font-semibold  font-Mona">89+</div>
+                  <div className="text-4xl md:text-5xl  font-semibold  font-Mona">89+</div>
                   <p>Completed projects</p>
                 </div>
                 <div className="space-y-2 ">
-                  <div className="text-5xl   font-semibold  font-Mona">50+</div>
+                  <div className="text-4xl md:text-5xl   font-semibold  font-Mona">50+</div>
                   <p>Satisfied Client</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-5xl  font-semibold  font-Mona">18+</div>
+                  <div className="text-4xl md:text-5xl  font-semibold  font-Mona">18+</div>
                   <p>Different countries</p>
                 </div>
               </div>
             </div>
             <div>
-              <img src="/vision.jpg" className="w-[600px] shadow-2xl shadow-[#f8e567]/30 rounded-3xl" alt="" />
+              <img src="/vision.jpg" className="hidden  lg:block md:w-[40vw] xl:w-[600px] shadow-2xl shadow-[#f8e567]/30 md:rounded-xl lg:rounded-3xl" alt="" />
             </div>
           </div>
         </div>

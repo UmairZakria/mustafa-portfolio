@@ -19,7 +19,7 @@ const Skills = () => {
     {
       yearRange: "2018–24",
       name:'Infinite Global Office',
-      category: "Development Project",
+      category: "Project Development",
       skills: [
         "Webflow",
         "HTML & CSS",
@@ -33,7 +33,7 @@ const Skills = () => {
     },
     {
       yearRange: "2022–24",
-      name:'Talk Tower Solution',
+      name:'Sigi Technologies',
       category: "Project Manager",
       skills: [
         "Notion",
@@ -47,13 +47,13 @@ const Skills = () => {
   ];
 
   return (
-    <div className=" min-h-screen  mt-[120px]">
+    <div  className=" min-h-screen  mt-[120px]">
       <h1 className="text-3xl md:text-5xl tracking-tighter font-Mona text-center uppercase font-bold">
         Experience & Skills
       </h1>
-      <div className="flex flex-col container mx-auto mt-[60px]">
+      <div className="flex flex-col container px-2 md:px-0  mx-auto mt-[60px]">
         {data.map((data, index) => (
-          <div key={index} className="border-b border-[#d1c6b7] py-14 flex justify-between items-start">
+          <div key={index} className="border-b border-[#d1c6b7] py-14 flex flex-wrap gap-10  lg:flex-nowrap justify-between items-start">
             <div className="font-Mona text-2xl font-bold">
                 {data.name}
             </div>
